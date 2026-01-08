@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>In Plain Site</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>In Plain Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="bg-white text-slate-900">
+    <div data-include="components/header.html"></div>
 
-</body>
+    <main class="mx-auto w-full max-w-5xl px-6 pb-16">
+      <div data-include="components/hero-slider.html"></div>
+      <div data-include="components/content-sections.html"></div>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="helpers/include.js"></script>
+    <script src="helpers/slider.js"></script>
+    <script src="helpers/state.js"></script>
+  </body>
 </html>
