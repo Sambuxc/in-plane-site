@@ -1,5 +1,5 @@
 body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Rethink Sans", sans-serif;
 }
 
 .hero-control {
@@ -13,4 +13,21 @@ body {
 .hero-control:hover {
   background-color: rgb(241 245 249);
   color: rgb(15 23 42);
+}
+
+/**
+Fonts
+*/
+header h1 {
+  font-weight: 300;
+  font-size: 22px;
+}
+
+/**
+Navigation Styles
+ */
+
+header nav a {
+  font-size: 15px;
+  line-height: 120%;
 }
