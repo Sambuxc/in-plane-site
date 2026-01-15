@@ -1,4 +1,4 @@
-<header class="mx-auto flex flex-col w-full max-w-5xl items-center justify-between">
+<header class="flex flex-row lg:flex-col items-center justify-between">
   <div class="w-full py-6 ps-12 flex items-center gap-2 text-lg font-semibold">
     <img
       class="pb-4"
@@ -8,9 +8,9 @@
     <h1>In Plane Site</h1>
   </div>
 
-  <hr class="w-full" />
+  <hr class="w-full hidden lg:block" />
 
-  <nav class="py-6 px-12 hidden w-full flex flex-col gap-2 text-sm text-slate-900 md:flex">
+  <nav class="py-6 px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-900">
     <a href="#nobodys-child" class="hover:text-slate-500">
       Nobody's Child
       <sup class="text-slate-400">01</sup>
@@ -29,15 +29,15 @@
     </a>
   </nav>
 
-  <hr class="w-full" />
+  <hr class="w-full hidden lg:block" />
 
-  <nav class="py-6 px-12 hidden w-full flex flex-col gap-2 text-sm text-slate-500 md:flex font-light">
+  <nav class="py-6 px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-500 font-light">
     <a href="#nobodys-child" class="hover:text-slate-900">Get Social</a>
     <a href="#short-stories" class="hover:text-slate-900">Contact</a>
   </nav>
 
 
-  <button class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 md:hidden">
+  <button class="me-12 px-4 py-2 inline-flex lg:hidden items-center gap-2 rounded-full border border-slate-200 text-sm text-slate-700">
     Menu
   </button>
 </header>
