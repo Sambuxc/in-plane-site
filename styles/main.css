@@ -23,11 +23,28 @@ body {
 }
 
 /**
-Fonts
+Headings
 */
-header h1 {
+.page-title {
   font-weight: 300;
   font-size: 22px;
+}
+
+.heading-1 {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 110%;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 1rem;
+    font-size: 36px;
+  }
+}
+
+p {
+  font-size: 15px;
+  line-height: 120%;
+  color: #575757;
 }
 
 /**
