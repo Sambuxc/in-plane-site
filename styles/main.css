@@ -58,13 +58,25 @@ Headings
   }
 }
 
+.heading-4 {
+  font-size: 22px;
+}
+
+.heading-5 {
+  font-size: 15px;
+}
+
 p {
   font-size: 15px;
   line-height: 120%;
 }
 
-.text-muted {
+section p {
   color: #575757;
+}
+
+.text-accent {
+  color: #F45F00;
 }
 
 /**
