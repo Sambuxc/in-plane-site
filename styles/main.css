@@ -80,6 +80,15 @@ section p {
 }
 
 /**
+Links
+ */
+
+p a {
+  color: #F45F00;
+  font-weight: 500;
+}
+
+/**
 Navigation Styles
  */
 
