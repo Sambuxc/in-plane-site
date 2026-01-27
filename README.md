@@ -8,3 +8,4 @@
 2. Add scroll-target-group to nav links - https://chrome.dev/css-wrapped-2025/#scroll-target-group
 3. Think about how Nested View Transition Groups could be used for animating open article posts - https://chrome.dev/css-wrapped-2025/#nested-view-transition-groups
 4. Add # to save your place on the page like https://chrome.dev/css-wrapped-2025 page does (so that when reloading the tab you can continue reading from where you left off).
+5. When scrolling down, each .heading-1 element should be fixed at the top of the viewport.

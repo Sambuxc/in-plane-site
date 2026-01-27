@@ -1,8 +1,54 @@
+:root {
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --shadow-3: 0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)), 0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+}
+
 @media(prefers-reduced-motion:no-preference) {
   :where(html) {
     scroll-behavior: smooth
   }
 }
+
+/**
+Scrollable states
+ */
+.back-to-top {
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  translate: 80px 0;
+  transition:
+          0.4s translate,
+          0.2s background-color;
+
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid rgb(226 232 240);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+html {
+  container-type: scroll-state;
+  container-name: scroller;
+}
+
+@container scroller scroll-state(scrollable: top) {
+  .back-to-top {
+    translate: 0 0;
+  }
+}
+
+/**
+Main Styles
+ */
 
 body {
   font-family: "Rethink Sans", sans-serif;
