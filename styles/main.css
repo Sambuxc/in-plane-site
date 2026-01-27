@@ -37,6 +37,7 @@ Headings
 }
 
 .heading-1 {
+  position: relative;
   font-size: 50px;
   font-weight: 400;
   line-height: 110%;
@@ -88,6 +89,15 @@ section p {
 /**
 Links
  */
+
+.heading-1:hover::before {
+  content: '#';
+  position: absolute;
+  display: inline-block;
+  left: -30px;
+  color: #F45F00;
+  font-size: 35px;
+}
 
 p a {
   color: #F45F00;
