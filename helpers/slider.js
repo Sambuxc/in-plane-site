@@ -1,6 +1,12 @@
 const slides = [
   {
-    label: "Hero image slider placeholder",
+    html: `<img src=\"../assets/image-1.jpg\" alt="Picture of an eagle perched on a tree branch" />`,
+  },
+  {
+    html: `<img src=\"../assets/image-2.jpg\" alt="Picture overlooking a lake at sunset, the sky's warm glow is reflecting off the water" />`,
+  },
+  {
+    html: `<img src=\"../assets/image-3.jpg\" alt="A close up picture of a hummingbird approaching a yellowy-red trumpet vine flower " />`,
   },
 ];
 
@@ -14,7 +20,7 @@ const initializeSlider = () => {
   }
 
   const renderSlide = () => {
-    slideElement.textContent = slides[currentIndex].label;
+    slideElement.innerHTML = slides[currentIndex].html;
   };
 
   const handleControlClick = (event) => {
