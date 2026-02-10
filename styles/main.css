@@ -166,6 +166,11 @@ header nav a {
 Shapes
  */
 
+.sq-10 {
+  corner-shape: round;
+  border-radius: 10px;
+}
+
 .sq-20 {
   corner-shape: round;
   border-radius: 20px;
