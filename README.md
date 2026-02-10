@@ -14,3 +14,10 @@
 1. Submit site to Google Search Console
 2. Connect to Google Analytics
 3. Add events to Google Tag Manager
+
+### Fb Developer Hub
+https://developers.facebook.com/docs/plugins/page-plugin/
+https://developers.facebook.com/docs/plugins/share-button/
+https://developers.facebook.com/docs/javascript/quickstart
+https://www.sociablekit.com/tutorials/embed-facebook-feed-website/
+https://elfsight.com/facebook-feed-widget/templates/facebook-wall/
