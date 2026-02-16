@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>In Plane Site</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="flex flex-col lg:flex-row bg-white text-slate-900">
+
+  <div class="relative w-full min-w-[250px] lg:w-1/5" data-include="/components/header.html"></div>
+
+  <div class="flex-1 w-full lg:w-4/5 max-w-6xl">
+    <main class="w-full lg:max-w-[1030px]">
+      <div data-include="/components/contact-form.html"></div>
+    </main>
+
+    <footer class="border-t border-slate-200 lg:max-w-[1030px]" data-include="/components/footer.html">
+    </footer>
+  </div>
+
+  <a class="back-to-top" href="#" aria-label="Top of page">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+         aria-hidden="true">
+      <path d="M7.41 14.59L12 10.00l4.59 4.59L18 13.17l-6-6-6 6z"/>
+    </svg>
+  </a>
+  <script src="/helpers/include.js"></script>
+  <script src="/helpers/slider.js"></script>
+  <script src="/helpers/state.js"></script>
+  </body>
+</html>
