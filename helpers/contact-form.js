@@ -30,6 +30,7 @@ const initializeContactForm = () => {
       email: String(formData.get("email") || "").trim(),
       subject: String(formData.get("subject") || "").trim(),
       message: String(formData.get("message") || "").trim(),
+      service: "In Plane Site",
     };
 
     if (!payload.name || !payload.email || !payload.subject || !payload.message) {
