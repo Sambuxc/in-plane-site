@@ -257,6 +257,26 @@ Contact form
   border-color: #f45f00;
 }
 
+.contact-form__submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.contact-form__status {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: #475569;
+}
+
+.contact-form__status[data-type="success"] {
+  color: #166534;
+}
+
+.contact-form__status[data-type="error"] {
+  color: #b91c1c;
+}
+
 @media screen and (min-width: 768px) {
   .contact-form__row {
     flex-direction: row;
