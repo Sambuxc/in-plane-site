@@ -1,47 +1,22 @@
 const initializeMobileMenu = (header) => {
   const toggle = header.querySelector("[data-mobile-menu-toggle]");
-  const panel = header.querySelector("[data-mobile-menu]");
-  const linksContainer = header.querySelector("[data-mobile-menu-links]");
+  const drawer = header.querySelector("[data-mobile-drawer]");
 
-  if (!toggle || !panel || !linksContainer) {
+  if (!toggle || !drawer) {
     return;
-  }
-
-  if (header.dataset.mobileLinksBuilt !== "true") {
-    const navSources = header.querySelectorAll(
-      '[data-nav="content-links"], [data-nav="return-home"], [data-nav="utility-links"]'
-    );
-    const seenLinks = new Set();
-
-    linksContainer.innerHTML = "";
-
-    navSources.forEach((nav) => {
-      nav.querySelectorAll("a").forEach((link) => {
-        const href = link.getAttribute("href") || "#";
-        const label = link.textContent.trim();
-        const dedupeKey = `${href}|${label}`;
-
-        if (seenLinks.has(dedupeKey)) {
-          return;
-        }
-        seenLinks.add(dedupeKey);
-
-        const mobileLink = document.createElement("a");
-        mobileLink.href = href;
-        mobileLink.className = "mobile-menu__link";
-        mobileLink.innerHTML = link.innerHTML;
-        linksContainer.appendChild(mobileLink);
-      });
-    });
-
-    header.dataset.mobileLinksBuilt = "true";
   }
 
   const setOpenState = (isOpen) => {
     toggle.setAttribute("aria-expanded", String(isOpen));
-    panel.setAttribute("aria-hidden", String(!isOpen));
-    panel.classList.toggle("is-open", isOpen);
-    panel.style.maxHeight = isOpen ? `${panel.scrollHeight}px` : "0px";
+    drawer.setAttribute("aria-hidden", String(!isOpen));
+    header.classList.toggle("is-open", isOpen);
+
+    if (window.innerWidth >= 1024) {
+      drawer.style.maxHeight = "none";
+      return;
+    }
+
+    drawer.style.maxHeight = isOpen ? `${drawer.scrollHeight}px` : "0px";
   };
 
   setOpenState(false);
@@ -55,7 +30,7 @@ const initializeMobileMenu = (header) => {
     setOpenState(!currentlyOpen);
   });
 
-  linksContainer.querySelectorAll("a").forEach((link) => {
+  drawer.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setOpenState(false));
   });
 
