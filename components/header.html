@@ -1,4 +1,4 @@
-<header class="me-6 xl:me-12 flex lg:fixed flex-row lg:flex-col lg:w-1/5 min-w-[250px] items-center justify-between">
+<header class="relative me-6 xl:me-12 flex lg:fixed flex-row lg:flex-col lg:w-1/5 min-w-[250px] items-center justify-between">
   <div class="w-full py-6 ps-6 xl:ps-12">
     <a href="/" class="flex items-center gap-2 text-lg font-semibold">
       <img
@@ -14,7 +14,7 @@
 
   <nav
     data-nav="content-links"
-    class="py-6 lg:px-6 xl:px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-900"
+    class="py-6 lg:px-6 xl:px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-900 border-b border-slate-200"
   >
     <a href="#nobodys-child" class="hover:text-slate-500">
       Nobody's Child
@@ -46,12 +46,25 @@
 
   <hr class="w-full hidden lg:block" />
 
-  <nav class="px-8 lg:px-6 py-6 xl:px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-500 font-light">
+  <nav
+    data-nav="utility-links"
+    class="px-8 lg:px-6 py-6 xl:px-12 hidden w-full lg:flex flex-col gap-2 text-sm text-slate-500 font-light"
+  >
     <a href="#socials" class="hover:text-slate-900">Get Social</a>
     <a href="/pages/contact-us.html" class="hover:text-slate-900">Contact</a>
   </nav>
 
-  <button class="px-4 py-2 inline-flex lg:hidden items-center gap-2 rounded-full border border-slate-200 text-sm text-slate-700">
+  <button
+    data-mobile-menu-toggle
+    type="button"
+    aria-expanded="false"
+    aria-controls="mobile-nav-menu"
+    class="px-4 py-2 inline-flex lg:hidden items-center gap-2 rounded-full border border-slate-200 text-sm text-slate-700"
+  >
     Menu
   </button>
+
+  <div id="mobile-nav-menu" data-mobile-menu class="mobile-menu lg:hidden" aria-hidden="true">
+    <nav data-mobile-menu-links class="mobile-menu__links"></nav>
+  </div>
 </header>
