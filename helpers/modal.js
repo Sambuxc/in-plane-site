@@ -35,8 +35,8 @@ document.addEventListener('includes:loaded', function() {
       const payload = {
         name: String(formData.get("name") || "").trim(),
         email: String(formData.get("email") || "").trim(),
-        subject: String(formData.get("interest") || "").trim(),
-        message: "User has registered their interest",
+        subject: "User registered interest",
+        message: String(formData.get("interest") || "").trim(),
         service: "In Plane Site",
       }
 
