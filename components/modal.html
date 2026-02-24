@@ -1,0 +1,36 @@
+<dialog id="interest-modal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+    <h2 id="modal-title" class="heading-2">Register Your Interest</h2>
+    <p class="text-muted mt-2 mb-6">Let us know what projects you would like us to keep you updated with.</p>
+    <form id="interest-form" class="interest-form" action="https://lib-tech.work/send-mailer" method="post" novalidate>
+      <div class="interest-form__row">
+        <label class="interest-form__field" for="interest-name">
+          <span class="interest-form__label">Full Name</span>
+          <input id="interest-name" name="name" type="text" autocomplete="name" required />
+        </label>
+        <label class="interest-form__field" for="interest-email">
+          <span class="interest-form__label">Email Address</span>
+          <input id="interest-email" name="email" type="email" autocomplete="email" required />
+        </label>
+      </div>
+      <div class="interest-form__row">
+        <label class="interest-form__field" for="interest-select">
+          <span class="interest-form__label">Interest</span>
+          <select id="interest-select" name="interest" required>
+            <option value="">Select your interest</option>
+            <option value="everything">Everything!</option>
+            <option value="nobodys-child">Nobody's Child</option>
+            <option value="short-stories">Short Stories</option>
+            <option value="music-box">Music Box</option>
+            <option value="fun-box">Fun Box</option>
+          </select>
+        </label>
+      </div>
+      <div class="interest-form__actions">
+        <button class="shared-form__submit" type="submit">Submit</button>
+        <p id="interest-form-status" class="contact-form__status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</dialog>
