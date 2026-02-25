@@ -2,7 +2,7 @@ const FORM_ENDPOINT = "https://lib-tech.work/send-mailer";
 
 document.addEventListener('includes:loaded', function() {
   const modal = document.getElementById('interest-modal');
-  const openBtn = document.querySelector('.primary');
+  const openBtn = document.querySelector('.open-modal');
   const form = document.getElementById('interest-form');
   const submitBtn = form.querySelector('.shared-form__submit');
   const statusElement = form.querySelector('#interest-form-status');
