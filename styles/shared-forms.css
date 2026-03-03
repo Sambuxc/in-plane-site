@@ -1,0 +1,42 @@
+/**
+Shared form styles
+ */
+
+.shared-form__submit {
+	border: 1px solid #f45f00;
+	border-radius: 9999px;
+	color: #f45f00;
+	background-color: transparent;
+	font-weight: 600;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	padding: 0.7rem 1.2rem;
+	transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.shared-form__submit:hover,
+.shared-form__submit:focus-visible {
+	color: #fff;
+	background-color: #f45f00;
+	border-color: #f45f00;
+}
+
+.shared-form__submit:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+}
+
+.shared-form__status {
+	min-height: 1.2em;
+	font-size: 0.85rem;
+	line-height: 1.3;
+	color: #475569;
+}
+
+.shared-form__status[data-type="success"] {
+	color: #166534;
+}
+
+.shared-form__status[data-type="error"] {
+	color: #b91c1c;
+}
