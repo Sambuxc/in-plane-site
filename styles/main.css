@@ -236,16 +236,21 @@ header nav a {
 /**
 * Buttons
 */
+
+button.primary,
+button.secondary {
+	border: 1px solid #F45F00;
+	border-radius: 9999px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	padding: 0.7rem 1.2rem;
+	transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
 button.primary {
-  border: 1px solid #F45F00;
-  border-radius: 9999px;
-  color: #fff;
+	color: #fff;
   background-color: #F45F00;
-  font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.2;
-  padding: 0.7rem 1.2rem;
-  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+
 }
 
 button.primary:hover,
@@ -253,6 +258,17 @@ button.primary:focus-visible {
   color: #F45F00;
   background-color: transparent;
   border-color: #F45F00;
+}
+
+button.secondary {
+	color: #F45F00;
+	background-color: transparent;
+}
+
+button.secondary:hover,
+button.secondary:focus-visible {
+  color: #fff;
+  background-color: #F45F00;
 }
 
 /**

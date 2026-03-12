@@ -7,6 +7,42 @@ document.addEventListener('includes:loaded', function() {
   const submitBtn = form.querySelector('.shared-form__submit');
   const statusElement = form.querySelector('#interest-form-status');
 
+  // Lyrics modal
+	// todo - support dialog closing event listener so that if
+	// user exits lyrics by esc button or clicking outside of dialog
+	// then the closeLyricsModal() gets called to reset state properly.
+  const lyricsModal = document.getElementById('lyrics-modal');
+	const butterflyLyrics = document.getElementById('butterfly');
+	const giveItWingsLyrics = document.getElementById('give-it-wings');
+	const everythingIHaveLyrics = document.getElementById('everything-i-have');
+
+  window.openLyricsModal = function(fileName) {
+		if (fileName === 'butterfly') {
+			butterflyLyrics.style.display = 'block';
+		}
+		else if (fileName === 'give-it-wings') {
+			giveItWingsLyrics.style.display = 'block';
+		}
+		else if (fileName === 'everything-i-have') {
+			everythingIHaveLyrics.style.display = 'block';
+		}
+    lyricsModal.showModal();
+  };
+
+  window.closeLyricsModal = function() {
+		// reset all lyrics
+		butterflyLyrics.removeAttribute('style');
+		giveItWingsLyrics.removeAttribute('style');
+		everythingIHaveLyrics.removeAttribute('style');
+    lyricsModal.close();
+  };
+
+  lyricsModal.addEventListener('click', function(e) {
+    if (e.target === lyricsModal) {
+      closeLyricsModal();
+    }
+  });
+
   if (openBtn) {
     openBtn.addEventListener('click', function(e) {
       openModal();
