@@ -31,7 +31,10 @@ const initializeContactForm = () => {
 			subject: String(formData.get("subject") || "").trim(),
 			message: String(formData.get("message") || "").trim(),
 			service: "In Plane Site",
+			token: document.querySelector('[name="cf-turnstile-response"]')?.value,
 		};
+
+		console.log(' payload: ', payload)
 
 		if (!payload.name || !payload.email || !payload.subject || !payload.message) {
 			setStatus("Please complete all fields before submitting.", "error");
