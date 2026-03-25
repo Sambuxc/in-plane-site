@@ -7,21 +7,29 @@
  *   3. Overlay fades out, revealing the page     (5500 – 6100ms)
  *
  * Guards:
- *   - Plays once per browser session (sessionStorage)
+ *   - Plays on 1st visit, then every 3rd visit (localStorage)
  *   - Respects prefers-reduced-motion
  */
 (() => {
-  const STORAGE_KEY = "introPlayed";
+  const STORAGE_KEY = "introVisitCount";
+  const PLAY_EVERY = 3;
   const overlay = document.getElementById("intro-overlay");
 
   if (!overlay) return;
 
-  // ── Reduced-motion or already played this session → skip ──
+  // ── Increment visit count ──
+  const count = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10) + 1;
+  localStorage.setItem(STORAGE_KEY, String(count));
+
+  // ── Determine if we should play ──
+  // Play on first visit (count === 1), then every 3rd visit after that
+  const shouldPlay = count === 1 || count % PLAY_EVERY === 0;
+
   const prefersReduced = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  if (prefersReduced || sessionStorage.getItem(STORAGE_KEY)) {
+  if (prefersReduced || !shouldPlay) {
     overlay.remove();
     return;
   }
@@ -49,6 +57,5 @@
   setTimeout(() => {
     overlay.remove();
     document.body.style.overflow = "";
-    sessionStorage.setItem(STORAGE_KEY, "1");
   }, 6100);
 })();
