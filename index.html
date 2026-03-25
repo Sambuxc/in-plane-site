@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/intro.css" />
     <link rel="stylesheet" href="/styles/interest-form.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +27,11 @@
   </head>
 
   <body class="flex flex-col lg:flex-row bg-white text-slate-900">
+
+    <!-- Intro Animation Overlay (inlined for instant availability) -->
+    <div id="intro-overlay" aria-hidden="true">
+      <div id="intro-element">In Plane Site</div>
+    </div>
 <!--  <script>-->
 <!--    window.fbAsyncInit = function() {-->
 <!--      FB.init({-->
@@ -63,5 +69,6 @@
     <script src="/helpers/slider.js"></script>
     <script src="/helpers/modal.js"></script>
     <script src="/helpers/state.js"></script>
+    <script src="/helpers/intro.js"></script>
   </body>
 </html>
