@@ -24,8 +24,8 @@
   align-items: center;
   translate: 80px 0;
   transition:
-          0.4s translate,
-          0.2s background-color;
+    0.4s translate,
+    0.2s background-color;
 
   color: white;
   text-align: center;
@@ -66,6 +66,7 @@ body {
 .hero-control.prev {
   margin-left: 20px;
 }
+
 .hero-control.next {
   margin-right: 20px;
 }
@@ -124,7 +125,7 @@ body {
 
 p {
   font-size: 15px;
-  line-height: 120%;
+  line-height: 1.25rem;
 }
 
 section p,
@@ -239,16 +240,17 @@ header nav a {
 
 button.primary,
 button.secondary {
-	border: 1px solid #F45F00;
-	border-radius: 9999px;
-	font-weight: 600;
-	font-size: 0.95rem;
-	line-height: 1.2;
-	padding: 0.7rem 1.2rem;
-	transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+  border: 1px solid #F45F00;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  padding: 0.7rem 1.2rem;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
 }
+
 button.primary {
-	color: #fff;
+  color: #fff;
   background-color: #F45F00;
 
 }
@@ -261,8 +263,8 @@ button.primary:focus-visible {
 }
 
 button.secondary {
-	color: #F45F00;
-	background-color: transparent;
+  color: #F45F00;
+  background-color: transparent;
 }
 
 button.secondary:hover,
