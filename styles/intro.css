@@ -20,22 +20,10 @@
 }
 
 /* ------------------------------------------
-   The element that starts as a dot and
-   morphs into the site title
+   The text element that scales up from tiny
    ------------------------------------------ */
 #intro-element {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Start as an invisible dot */
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #fff;
-
-  /* Text hidden initially */
-  color: transparent;
+  color: #fff;
   font-family: "Rethink Sans", sans-serif;
   font-size: 48px;
   font-weight: 300;
@@ -44,48 +32,24 @@
 
   opacity: 0;
   transform: scale(0.05);
-  will-change: transform, opacity, border-radius, width, height, color, background-color;
+  will-change: transform, opacity;
 }
 
-/* Phase 1 — Dot appears */
-#intro-element.phase-dot {
-  animation: intro-dot-in 500ms ease-out forwards;
-}
-
-/* Phase 2 — Dot morphs into text */
-#intro-element.phase-morph {
-  width: auto;
-  height: auto;
-  padding: 0.25em 0.5em;
-  border-radius: 0;
-  background-color: transparent;
-  color: #fff;
-  animation: intro-morph 1800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* Text scales up */
+#intro-element.phase-scale {
+  animation: intro-scale-up 5000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* ------------------------------------------
    Keyframes
    ------------------------------------------ */
 
-/* Fade-in the dot */
-@keyframes intro-dot-in {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Scale the text from tiny to full size */
-@keyframes intro-morph {
+@keyframes intro-scale-up {
   0% {
     opacity: 0;
     transform: scale(0.05);
   }
-  30% {
+  15% {
     opacity: 1;
   }
   100% {

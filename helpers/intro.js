@@ -2,10 +2,9 @@
  * Intro Animation Controller
  *
  * Sequences the homepage intro animation:
- *   1. Black screen → white dot fades in        (0 – 500ms)
- *   2. Dot morphs & scales into site title text  (500 – 2300ms)
- *   3. Hold for a beat                           (2300 – 2800ms)
- *   4. Overlay fades out, revealing the page     (2800 – 3400ms)
+ *   1. Black screen → text scales up from tiny   (0 – 5000ms)
+ *   2. Hold for a beat                           (5000 – 5500ms)
+ *   3. Overlay fades out, revealing the page     (5500 – 6100ms)
  *
  * Guards:
  *   - Plays once per browser session (sessionStorage)
@@ -36,30 +35,20 @@
   // Prevent page scroll while animation plays
   document.body.style.overflow = "hidden";
 
-  // ── Phase 1: Dot appears ──
+  // ── Start text scale-up ──
   requestAnimationFrame(() => {
-    el.classList.add("phase-dot");
+    el.classList.add("phase-scale");
   });
 
-  // ── Phase 2: Morph into text ──
-  setTimeout(() => {
-    el.classList.remove("phase-dot");
-
-    // Force reflow so the new animation triggers cleanly
-    void el.offsetWidth;
-
-    el.classList.add("phase-morph");
-  }, 550);
-
-  // ── Phase 3: Hold, then fade out overlay ──
+  // ── Hold, then fade out overlay ──
   setTimeout(() => {
     overlay.classList.add("is-hidden");
-  }, 2800);
+  }, 5500);
 
   // ── Cleanup after fade-out transition ends ──
   setTimeout(() => {
     overlay.remove();
     document.body.style.overflow = "";
     sessionStorage.setItem(STORAGE_KEY, "1");
-  }, 3400);
+  }, 6100);
 })();
