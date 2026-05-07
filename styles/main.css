@@ -87,7 +87,7 @@ body {
   position: sticky;
   top: 0;
   background-color: #fff;
-  padding: 0.5rem 0;
+  padding: 0;
   font-size: 50px;
   font-weight: 400;
   line-height: 110%;
@@ -135,6 +135,10 @@ section p,
 
 .text-accent {
   color: #F45F00;
+}
+
+.text-purple {
+  color: purple;
 }
 
 /**
@@ -308,4 +312,26 @@ dialog.modal::backdrop {
 
 .modal-close:hover {
   color: #334155;
+}
+
+
+/**
+* Fun Articles
+*/
+
+/* Mobile */
+.article {
+  max-width: 420px;
+  width: 100%;
+  justify-self: center;
+  overflow: hidden;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+
+  /* First article spans both columns */
+  .article:first-child {
+    grid-column: 1 / -1;
+  }
 }
